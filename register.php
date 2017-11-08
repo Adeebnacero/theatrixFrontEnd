@@ -16,33 +16,34 @@
 				$surname = $_POST['surname'];
 				$password = $_POST['password'];	
 				
-			$curl = curl_init();
+				$curl = curl_init();
 
-			curl_setopt_array($curl, array(
-			  CURLOPT_PORT => "8080",
-			  CURLOPT_URL => "http://localhost:8080/theatrix/addAdmin/%7B$name%7D/%$surname%7D/%7Bpassword%7D",
-			  CURLOPT_RETURNTRANSFER => true,
-			  CURLOPT_ENCODING => "",
-			  CURLOPT_MAXREDIRS => 10,
-			  CURLOPT_TIMEOUT => 30,
-			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			  CURLOPT_CUSTOMREQUEST => "GET",
-			  CURLOPT_HTTPHEADER => array(
-				"authorization: Basic dXNlcjpwYXNzd29yZA==",
-				"cache-control: no-cache",
-				"postman-token: fd57a995-4366-4e3e-76e9-12981db355eb"
-			  ),
-			));
+				curl_setopt_array($curl, array(
+				  CURLOPT_PORT => "8080",
+				  CURLOPT_URL => "http://localhost:8080/theatrix/addAdmin/%7B$name%7D/%$surname%7D/%7Bpassword%7D",
+				  CURLOPT_RETURNTRANSFER => true,
+				  CURLOPT_ENCODING => "",
+				  CURLOPT_MAXREDIRS => 10,
+				  CURLOPT_TIMEOUT => 30,
+				  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				  CURLOPT_CUSTOMREQUEST => "GET",
+				  CURLOPT_HTTPHEADER => array(
+					"authorization: Basic dXNlcjpwYXNzd29yZA==",
+					"cache-control: no-cache",
+					"postman-token: fd57a995-4366-4e3e-76e9-12981db355eb"
+				  ),
+				));
 
-			$response = curl_exec($curl);
-			$err = curl_error($curl);
+				$response = curl_exec($curl);
+				$err = curl_error($curl);
 
-			curl_close($curl);
+				curl_close($curl);
 
-			if ($err) {
-			  echo "cURL Error #:" . $err;
-			} else {
-			  echo $response;
+				if ($err) {
+				  echo "cURL Error #:" . $err;
+				} else {
+				  echo $response;
+				}
 			}
 	?>
 </div>

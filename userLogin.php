@@ -11,6 +11,44 @@
 <body background ="images/th3.png">
 <label for="name">Please enter the following below: </label>
 <div class = "container form-signin" align="center-left">
+	<?php
+
+			if (isset($_POST['login']) && !empty($_POST['name']) && !empty($_POST['password']))
+			{		
+				$name = $_POST['name'];
+				$password = $_POST['password'];	
+				
+				$curl = curl_init();
+
+				curl_setopt_array($curl, array(
+				  CURLOPT_PORT => "8080",
+				  CURLOPT_URL => "http://localhost:8080/theatrix//readSingleUser/%$name%7D",
+				  CURLOPT_RETURNTRANSFER => true,
+				  CURLOPT_ENCODING => "",
+				  CURLOPT_MAXREDIRS => 10,
+				  CURLOPT_TIMEOUT => 30,
+				  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				  CURLOPT_CUSTOMREQUEST => "GET",
+				  CURLOPT_HTTPHEADER => array(
+					"authorization: Basic dXNlcjpwYXNzd29yZA==",
+					"cache-control: no-cache",
+					"postman-token: f5f091c1-b512-e8bf-f639-026d6582169c"
+				  ),
+				));
+
+				$response = curl_exec($curl);
+				$err = curl_error($curl);
+
+				curl_close($curl);
+
+				if ($err) {
+				  echo "cURL Error #:" . $err;
+				} else {
+				  echo $response;
+				}
+			}
+	?>
+
 </div>
 <div class= "container" align="center" >
     <form class = "form-signin" role = "form" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
