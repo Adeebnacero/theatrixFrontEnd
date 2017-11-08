@@ -8,10 +8,9 @@
 </head>
 
 	<h1 align = "center">Welcome to Theatrix</h1></br>
-    <body background="images/th1.png">		
-		<div class="group submit" align = "right">
-			<label class="empty"></label>
-			<div><input name="submit" type="submit" value="Admin Login" image="icon/homeBtn.png"/></div>		
+    <body background="images/th1.png" >		
+		<div class="btSubmit" >			
+			<div id = "button"><a href="userLogin.php" src="icon/homeBtn.png">Admin Login</a></div>		
 		</div>
 		
 		<table cellpadding="1" cellspacing="0" style="background-color:#" width="1020">
@@ -96,9 +95,8 @@
 		<div class="group" align = "center">
 			<b><label for="name">Currently Playing</label><b>			
 		</div></br>
-		<div class="group submit" align = "center">
-			<label class="empty"></label>
-			<div><input name="submit" type="submit" value="Book Show" /></div>		
+		<div class="btnSubmit" align = "center">
+			<div id = "btnSubmit"><a href="customerBooking.php">Book Show</a></div>			
 		</div></br>
 		
 		<table cellpadding="1" cellspacing="0" style="background-color:#" width="1020">

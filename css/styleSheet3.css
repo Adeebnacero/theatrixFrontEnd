@@ -111,4 +111,27 @@ td:highlighted	{
 		font-weight:bold;
 }
 
+.btnSubmit {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2C3B4E;
+  border-radius: 15px;
+}
+
+.btSubmit {
+  display: inline-block;
+  padding: 15px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: right;
+  color: #fff;
+  background-color: #2C3B4E;
+  border-radius: 15px;
+}
+
 

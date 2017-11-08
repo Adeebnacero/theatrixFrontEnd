@@ -3,13 +3,16 @@
     <title>Theatrix Admin Login</title>
 	<link rel="stylesheet" type="text/css" href="css/cssLogin.css">
 </head>
-<input type="image" src="icon/homeBtn.png" a href="home.php" align="right" style="colour:#"/>
+
+		<div class="btSubmit" align = "right">			
+			<div id = "button"><a href="homepage.php" src="icon/homeBtn.png" >HOME</a></div>				
+		</div>
 <h1>Hello Theatrix User...</h1>
 <body background ="images/th3.png">
 <label for="name">Please enter the following below: </label>
 <div class = "container form-signin" align="center-left">
 </div>
-<div class = "container" align="center" >
+<div class= "container" align="center" >
     <form class = "form-signin" role = "form" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
         <h4 class = "form-signin-heading">
             <div class="group">
@@ -18,11 +21,11 @@
             </div><br></br>
             <div class="group">
                 <label for="psw">Password</label>
-                <div><input id="psw" name="psw" class="form-control" type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autofocus></div>
+                <div><input id="psw" name="psw" class="form-control" type="text" placeholder="Password" required autofocus></div>
             </div><br></br>
-            <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "login">User Login</button></br></br>
+            <button class = "btnSubmit" type = "submit" name = "login"><a href="adminSeating.php"</a>User Login</button></br></br>
     </form>
-    Need to Register? Click here <a href = "register.html" tite = "Register">Register
+    Need to Register? Click here <a href = "register.php" tite = "Register">Register
 </div>
 
 	<table cellpadding="10" cellspacing="2" style="background-color:#" width="1120">

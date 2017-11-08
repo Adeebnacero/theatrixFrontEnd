@@ -7,10 +7,47 @@
 <body background="images/scene3">
 <h1>Theatrix Administrator Registration</h1>
 <div class = "container form-signin" align="center">
+	<?php
+			
+			if (isset($_POST['register']) && !empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['password']))
+			{		
+			
+				$name = $_POST['name'];
+				$surname = $_POST['surname'];
+				$password = $_POST['password'];	
+				
+			$curl = curl_init();
 
+			curl_setopt_array($curl, array(
+			  CURLOPT_PORT => "8080",
+			  CURLOPT_URL => "http://localhost:8080/theatrix/addAdmin/%7B$name%7D/%$surname%7D/%7Bpassword%7D",
+			  CURLOPT_RETURNTRANSFER => true,
+			  CURLOPT_ENCODING => "",
+			  CURLOPT_MAXREDIRS => 10,
+			  CURLOPT_TIMEOUT => 30,
+			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			  CURLOPT_CUSTOMREQUEST => "GET",
+			  CURLOPT_HTTPHEADER => array(
+				"authorization: Basic dXNlcjpwYXNzd29yZA==",
+				"cache-control: no-cache",
+				"postman-token: fd57a995-4366-4e3e-76e9-12981db355eb"
+			  ),
+			));
+
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
+
+			curl_close($curl);
+
+			if ($err) {
+			  echo "cURL Error #:" . $err;
+			} else {
+			  echo $response;
+			}
+	?>
 </div>
-<div class = "container" align="center" >
-    <form class = "form-signin" role = "form" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
+<div class = "container" align="center" action ="userLogin.php">
+    <form class = "form-signin" role = "form" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post" >
         <h4 class = "form-signin-heading">
             <div class="group">
                 <label for="name">Name</label>
@@ -41,9 +78,9 @@
                 <div><input id="psw" name="psw" class="form-control" type="text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autofocus></div>
             </div>
 			<br></br>
-            <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "register">Register</button></br></br>
+            <button class = "btn btn-lg btn-primary btn-block" type = "submit" name = "register"><a href="userLogin.php"</a>Register</button></br></br>
     </form>
-    Already Registered <a href = "login.html" tite = "NewLogin">Login Screen
+    Already Registered <a href = "userLogin.php" tite = "NewLogin">Login Screen
 </div>
 </body>
 </html>

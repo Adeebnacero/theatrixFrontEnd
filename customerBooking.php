@@ -72,13 +72,12 @@
 		  }
 	</style>
 </head>
-<div class="group submit"align = "right">
-        <label class="empty" ></label>
-        <div><input name="submit" type="submit" value="Back"/></div>
-</div>
+	<div class="btSubmit" align = "right">			
+		<div id = "button"><a href="homepage.php" src="icon/homeBtn.png" >Back</a></div>				
+	</div>
 <h1>Reservation Form</h1>
 <body background="images/th2.png" >
-<form id="booking-form" class="booking-form" name="form1" method="post" action="www.google.co.za">
+<form id="booking-form" class="booking-form" name="form1" method="post" action="customerBooking2.php">
     <div id="form-content">
         <div class="group">
 		<table cellpadding="0" cellspacing="2" style="background-color:#" width="1260" align="center">
